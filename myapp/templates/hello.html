@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index_style.css') }}">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="content">
+        <form action="/applyphoto" method="get">
+            이름 : <input placeholder="입력하세요" required name="location"> <br>
+            <textarea name="introduce" placeholder="자기소개" cols="40" rows="4" required></textarea><br>
+            <button>입력</button>
+
+        </form>
+    </div>
+
+    <a href="/apply">페이지 이동 1</a>
+    <a href="/list">페이지 이동 2</a>
+
+</body>
+
+</html>
