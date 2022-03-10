@@ -19,14 +19,6 @@ def applyPhoto():
         val2 = request.args.get('introduce')
         return render_template('applyphoto.html', location=val, introduce=val2)
 
-
-    # location = request.args.get("location")
-    # photo = request.args.get("clean")
-    # introduce = request.args.get("introduce")
-    # print(location, photo, introduce)
-    # return render_template('applyphoto.html')
-
-
 @app.route('/list')
 def list():
     return render_template('list.html')
