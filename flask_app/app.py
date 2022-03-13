@@ -1,12 +1,43 @@
-from flask import Flask, render_template, request, url_for,  redirect
-from flask_sqlalchemy import SQLAlchemy
+from flask import Flask, render_template, request, url_for,  redirect, session
+#from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 app = Flask(__name__)
+app.secret_key = "sdliwoguihaq3l56ksga"
 
-@app.route('/')
-def hello():
-    return render_template("hello.html")
+ID = "hello"
+PW = "sohui"
 
+# @app.route('/')
+# def hello():
+#     return render_template("hello.html")
+
+@app.route("/")
+def home():
+    if "userID" in session: #로그인 된 상태
+        return render_template("home.html", username = session.get("userID"), login = True) # 세션에 있는 userId를 가져온다.
+    else:
+        return render_template("home.html", login = False)
+
+    #return render_template("login.html")
+
+
+@app.route("/login", methods= ["get"])
+def login():
+    global ID, PW
+    _id_ = request.args.get("loginId")
+    _password_ = request.args.get("loginPw")
+
+    if ID == _id_ and PW == _password_:
+        print(_id_, _password_)
+        session["userID"] = _id_
+        return redirect(url_for("home"))
+    else:
+        return redirect(url_for("home"))
+
+@app.route("/logout")
+def logout():
+    session.pop("userID")
+    return redirect(url_for("home"))
 
 @app.route('/apply')
 def apply():
