@@ -1,6 +1,8 @@
+import os
 from flask import Flask, render_template, request, url_for,  redirect, session
-#from flask_sqlalchemy import SQLAlchemy
+from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
+
 app = Flask(__name__)
 app.secret_key = "sdliwoguihaq3l56ksga"
 
