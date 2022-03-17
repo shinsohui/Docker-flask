@@ -7,6 +7,7 @@ app = Flask(__name__)
 app.secret_key = "sdliwoguihaq3l56ksga"
 
 # 아이디랑 비밀번호 sqlite로 만들어보기
+# git 500 에러 죽인다..
 
 # @app.route('/')
 # def hello():
