@@ -6,8 +6,7 @@ from datetime import datetime
 app = Flask(__name__)
 app.secret_key = "sdliwoguihaq3l56ksga"
 
-ID = "hello"
-PW = "sohui"
+# 아이디랑 비밀번호 sqlite로 만들어보기
 
 # @app.route('/')
 # def hello():
